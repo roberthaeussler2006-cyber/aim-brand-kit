@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="aim:print" content="A4-landscape">
+<meta name="aim:about" content="Certificate A4 landscape: Learning Journey completion, workshop participation, thank-you for speakers.">
+<title>AIM certificate</title>
+<link rel="stylesheet" href="../../brand/tokens.css">
+<link rel="stylesheet" href="../../brand/components.css">
+<style>
+  @page { size: 303mm 216mm; }
+  .canvas { --w: 303mm; --h: 216mm; --base: 4.6mm; --pad-x: 28mm; --pad-top: 24mm; --pad-bottom: 22mm; }
+  .frame { position: absolute; inset: 11mm; border: 2px solid var(--line-on-dark); z-index: 2; pointer-events: none; }
+  .top { display: flex; justify-content: space-between; align-items: flex-start; }
+  .main { margin: auto 0; }
+  .main .headline { margin-top: 0.35em; }
+  .main .name { margin-top: 0.9em; font-family: var(--font-display); font-weight: 700; font-size: 2.6em; letter-spacing: -0.02em; line-height: 1; color: var(--aim-glow); }
+  .main .text { margin-top: 1.1em; max-width: 36em; }
+  .sign { display: flex; gap: 18mm; }
+  .sign div { min-width: 58mm; border-top: 1px solid var(--line-on-dark); padding-top: 2.5mm; font-size: 0.75em; color: var(--fg-faint); }
+  .sign b { display: block; color: var(--fg); font-weight: 500; font-size: 1.2em; margin-bottom: 0.2em; }
+  .bottom { display: flex; justify-content: space-between; align-items: flex-end; }
+  .bottom .small { text-align: right; }
+</style>
+</head>
+<body>
+<div class="canvas theme-dark">
+  <div class="glow" style="--x: 85%; --y: 15%; --size: 90%"></div>
+  <img class="dome" src="../../brand/motifs/network-dome.svg" alt="" style="--x: 82%; --y: 32%; --size: 62%; --opacity: 0.45">
+  <div class="vignette"></div>
+  <div class="grain"></div>
+  <div class="frame" data-decor></div>
+
+  <div class="content">
+    <div class="top">
+      <img class="logo" src="../../brand/logo/aim-wordmark-light.svg" alt="AIM, AI in Management Club" style="--logo-w: 9em">
+      <span class="eyebrow" data-sample>Herbstsemester 2026</span>
+    </div>
+
+    <div class="main">
+      <div class="eyebrow">Zertifikat</div>
+      <h1 class="headline" style="--headline-size: 3.4em" data-sample>Learning Journey<br>abgeschlossen.</h1>
+      <div class="name" data-sample>Vorname Nachname</div>
+      <p class="text" data-sample>hat alle Sessions der AIM Learning Journey besucht und die Abschlussaufgabe erfolgreich eingereicht.</p>
+    </div>
+
+    <div class="bottom">
+      <div class="sign">
+        <div><b data-sample>Vorname Nachname</b>Co-President</div>
+        <div><b data-sample>Vorname Nachname</b>Head of Program</div>
+      </div>
+      <div class="small" data-sample>St. Gallen, 18. Dezember 2026</div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

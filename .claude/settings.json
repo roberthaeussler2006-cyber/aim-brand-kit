@@ -1,0 +1,29 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run *)",
+      "Bash(npm install)",
+      "Bash(npx playwright install chromium)",
+      "Bash(node scripts/*)",
+      "Bash(ls *)",
+      "Bash(cp *)",
+      "Bash(mkdir *)",
+      "Bash(open output/*)",
+      "Read(**)",
+      "Edit(output/**)",
+      "Write(output/**)"
+    ],
+    "deny": [
+      "Edit(brand/**)",
+      "Write(brand/**)",
+      "Edit(guide/**)",
+      "Write(guide/**)",
+      "Edit(templates/**)",
+      "Write(templates/**)",
+      "Edit(scripts/**)",
+      "Write(scripts/**)",
+      "Bash(git push*)",
+      "Bash(rm -rf *)"
+    ]
+  }
+}

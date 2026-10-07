@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="aim:size" content="1128x191">
+<meta name="aim:about" content="LinkedIn company page cover 1128x191. The profile picture covers the bottom-left corner, keep it empty.">
+<title>AIM LinkedIn cover</title>
+<link rel="stylesheet" href="../../brand/tokens.css">
+<link rel="stylesheet" href="../../brand/components.css">
+<style>
+  /* LinkedIn places the logo over the left ~260px on desktop and crops the sides on mobile:
+     keep text right of 300px and away from the outer 40px. */
+  .canvas { --w: 1128px; --h: 191px; --base: 18px; --pad-x: 48px; --pad-top: 0px; --pad-bottom: 0px; }
+  .content { flex-direction: row; align-items: center; justify-content: flex-end; gap: 2.2em; padding-left: 300px; }
+  .claim { font-family: var(--font-display); font-weight: 700; font-size: 1.9em; letter-spacing: -0.02em; line-height: 1; color: var(--fg); }
+  .claim .hl { color: var(--aim-glow); }
+  .sep { width: 1px; align-self: stretch; margin: 54px 0; background: var(--line); }
+</style>
+</head>
+<body>
+<div class="canvas theme-dark">
+  <div class="photo"><img src="../../brand/photos/mountains.jpg" alt="" style="--focus: 50% 40%"></div>
+  <div class="glow glow--soft" style="--x: 75%; --y: 50%; --size: 70%"></div>
+  <div class="grain"></div>
+  <div class="content">
+    <div class="claim">KI für die, die <span class="hl">führen wollen.</span></div>
+    <div class="sep"></div>
+    <img class="logo" src="../../brand/logo/aim-wordmark-light.svg" alt="AIM, AI in Management Club" style="--logo-w: 8em">
+  </div>
+</div>
+</body>
+</html>

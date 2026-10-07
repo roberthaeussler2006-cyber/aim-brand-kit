@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="aim:size" content="1920x1080">
+<meta name="aim:about" content="Presentation slides 1920x1080 (16:9): title, content, numbered points, closing. Export as PDF with --pdf.">
+<title>AIM slides</title>
+<link rel="stylesheet" href="../../brand/tokens.css">
+<link rel="stylesheet" href="../../brand/components.css">
+<style>
+  .canvas { --w: 1920px; --h: 1080px; --base: 30px; --pad-x: 112px; --pad-top: 84px; --pad-bottom: 72px; }
+  /* Header and footer on every slide, like the AIM club deck */
+  .header { display: flex; justify-content: space-between; align-items: center; }
+  .footer { margin-top: auto; display: flex; justify-content: space-between; font-size: 0.64em; color: var(--fg-faint); letter-spacing: 0.04em; }
+
+  .title .head { margin-top: auto; }
+  .title .headline { margin-top: 0.25em; }
+  .title .lede { margin-top: 0.8em; }
+  .title .footer { margin-top: 2.4em; }
+
+  .split { margin-top: 2.2em; display: grid; grid-template-columns: 1fr 1fr; gap: 3.2em; align-items: start; }
+  .split .text { font-size: 1.05em; margin-top: 0.9em; }
+  .split .photo-box { position: relative; aspect-ratio: 4 / 3; overflow: hidden; }
+  .split .photo-box img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+  .points .headline { margin-top: 1.6em; }
+  .points .numbered { margin-top: 1.2em; display: grid; grid-template-columns: repeat(3, 1fr); gap: 0 2em; }
+  .points .numbered li { grid-template-columns: 1fr; border-top-width: 2px; }
+
+  .close .headline { margin-top: auto; }
+  .close .qr-block { margin-top: 1.6em; }
+</style>
+</head>
+<body>
+
+<!-- Title slide -->
+<div class="canvas theme-dark title">
+  <div class="photo"><img src="../../brand/photos/dark-peak.jpg" alt=""></div>
+  <div class="grain"></div>
+  <div class="content">
+    <div class="header"><img class="logo" src="../../brand/logo/aim-wordmark-light.svg" alt="AIM, AI in Management Club" style="--logo-w: 6.5em"></div>
+    <div class="head">
+      <div class="eyebrow" data-sample>Learning Journey · Session 1</div>
+      <h1 class="headline headline--hero" style="--headline-size: 4.6em" data-sample>KI im <span class="hl">Pitch-Deck.</span></h1>
+      <p class="lede" data-sample>Vom leeren Slide zur Storyline in 20 Minuten.</p>
+    </div>
+    <div class="footer"><span>aim-club.ch</span><span>01</span></div>
+  </div>
+</div>
+
+<!-- Content slide: text left, photo right -->
+<div class="canvas theme-light">
+  <div class="content">
+    <div class="header"><img class="logo" src="../../brand/logo/aim-mark-dark.svg" alt="AIM" style="--logo-w: 2.6em"><span class="eyebrow" data-sample>Warum das zählt</span></div>
+    <div class="split">
+      <div>
+        <h2 class="headline" style="--headline-size: 2.4em" data-sample>Die HSG bildet Entscheider aus. Wir bereiten sie auf <span class="hl">KI</span> vor.</h2>
+        <p class="text" data-sample>KI in Pitch-Decks, Risk-Frameworks und Client Reporting. Nicht im Tensor.</p>
+      </div>
+      <div class="photo-box"><img src="../../brand/photos/workshop.jpg" alt=""></div>
+    </div>
+    <div class="footer"><span>aim-club.ch</span><span>02</span></div>
+  </div>
+</div>
+
+<!-- Numbered points -->
+<div class="canvas theme-light points">
+  <div class="content">
+    <div class="header"><img class="logo" src="../../brand/logo/aim-mark-dark.svg" alt="AIM" style="--logo-w: 2.6em"><span class="eyebrow" data-sample>Ablauf</span></div>
+    <h2 class="headline" style="--headline-size: 2.4em" data-sample>So läuft die Session.</h2>
+    <ol class="numbered">
+      <li><span class="n">01</span><div><h3 data-sample>Brief schreiben</h3><p data-sample>Ziel, Publikum und Kernaussage in fünf Sätzen.</p></div></li>
+      <li><span class="n">02</span><div><h3 data-sample>Storyline bauen</h3><p data-sample>Die KI schlägt vor, du entscheidest.</p></div></li>
+      <li><span class="n">03</span><div><h3 data-sample>Prüfen</h3><p data-sample>Zahlen, Quellen und Ton gegenlesen.</p></div></li>
+    </ol>
+    <div class="footer"><span>aim-club.ch</span><span>03</span></div>
+  </div>
+</div>
+
+<!-- Closing slide -->
+<div class="canvas theme-violet close">
+  <div class="grain"></div>
+  <div class="content">
+    <div class="header"><img class="logo" src="../../brand/logo/aim-wordmark-light.svg" alt="AIM, AI in Management Club" style="--logo-w: 6.5em"></div>
+    <h2 class="headline headline--hero" style="--headline-size: 3.8em">Danke.</h2>
+    <div class="qr-block">
+      <img class="qr" src="../../brand/qr/qr-join.svg" alt="QR-Code aim-club.ch/join">
+      <div><div class="headline headline--sm">Mitglied werden</div><p class="url" style="margin-top: 0.4em">aim-club.ch/join</p></div>
+    </div>
+    <div class="footer"><span>@aiinmanagement</span><span>04</span></div>
+  </div>
+</div>
+
+</body>
+</html>

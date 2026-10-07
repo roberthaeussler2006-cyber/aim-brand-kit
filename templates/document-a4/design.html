@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="aim:print" content="A4">
+<meta name="aim:about" content="A4 document (PDF), light, one or more pages: one-pagers, info sheets, partner decks in print, handouts.">
+<title>AIM document</title>
+<link rel="stylesheet" href="../../brand/tokens.css">
+<link rel="stylesheet" href="../../brand/components.css">
+<style>
+  /* 216 x 303 mm = A4 plus 3 mm bleed. For office printing the bleed is simply trimmed off. */
+  @page { size: 216mm 303mm; }
+  .canvas { --w: 216mm; --h: 303mm; --base: 3.9mm; --pad-x: 21mm; --pad-top: 19mm; --pad-bottom: 15mm; }
+  .header { display: flex; justify-content: space-between; align-items: center; padding-bottom: 5mm; border-bottom: 2px solid var(--ink); }
+  .header .eyebrow { color: var(--muted); }
+  h1.headline { margin-top: 1.3em; }
+  .lede { margin-top: 0.7em; font-size: 1.35em; color: var(--ink); max-width: 28em; }
+  .cols { margin-top: 2.2em; display: grid; grid-template-columns: 1fr 1fr; gap: 0 9mm; }
+  h2.headline { font-size: 1.45em; letter-spacing: -0.015em; line-height: 1.15; margin-top: 1.4em; }
+  h2.headline:first-child { margin-top: 0; }
+  .text { margin-top: 0.55em; color: var(--ink); line-height: 1.5; }
+  .text + .text { margin-top: 0.8em; }
+  .card { margin-top: 1.6em; }
+  .card .eyebrow { color: var(--aim); }
+  .card .text { margin-top: 0.4em; }
+  .footer-bar { margin-top: auto; border-top: 1px solid var(--rule); color: var(--muted); }
+  .numbered { margin-top: 0.4em; }
+</style>
+</head>
+<body>
+
+<!-- Page 1 -->
+<div class="canvas theme-light">
+  <div class="content">
+    <div class="header">
+      <img class="logo" src="../../brand/logo/aim-wordmark-dark.svg" alt="AIM, AI in Management Club" style="--logo-w: 9em">
+      <span class="eyebrow" data-sample>Factsheet · 2026</span>
+    </div>
+
+    <h1 class="headline" style="--headline-size: 3.2em" data-sample>KI für die, die<br><span class="hl">führen wollen.</span></h1>
+    <p class="lede" data-sample>AIM ist der Verein für KI-Kompetenz an der Universität St.&nbsp;Gallen. Für angehende Banker, Berater und CFOs.</p>
+
+    <div class="cols">
+      <div>
+        <h2 class="headline" data-sample>Was wir machen</h2>
+        <p class="text" data-sample>Events mit Praktikern, eine Learning Journey mit wöchentlichen Sessions und ein Netzwerk von Studierenden, die KI anwenden statt darüber zu reden.</p>
+        <h2 class="headline" data-sample>Für wen</h2>
+        <p class="text" data-sample>Für alle HSG-Studierenden, ohne technische Vorkenntnisse. Wir bleiben bei der Anwendung: Pitch-Decks, Analysen, Reportings.</p>
+      </div>
+      <div>
+        <h2 class="headline" data-sample>Programm</h2>
+        <ol class="numbered">
+          <li><span class="n">01</span><div><h3 data-sample>Events</h3><p data-sample>Keynotes und Panels mit Firmen.</p></div></li>
+          <li><span class="n">02</span><div><h3 data-sample>Learning Journey</h3><p data-sample>Praktische Sessions über das Semester.</p></div></li>
+          <li><span class="n">03</span><div><h3 data-sample>Community</h3><p data-sample>Austausch, Apéros, Projekte.</p></div></li>
+        </ol>
+        <div class="card card--tint">
+          <div class="eyebrow">Mitgliedschaft</div>
+          <p class="text"><b>CHF 40, einmalig.</b> Anmeldung auf <span class="nowrap">aim-club.ch/join</span></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bar"><span>AIM, AI in Management Club · Universität St. Gallen</span><span>aim-club.ch · info@aim-club.ch</span></div>
+  </div>
+</div>
+
+</body>
+</html>

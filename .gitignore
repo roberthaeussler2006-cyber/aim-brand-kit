@@ -1,0 +1,5 @@
+node_modules/
+.DS_Store
+# Finished designs are not committed by default. Approved ones go to gallery/.
+output/*
+!output/README.md

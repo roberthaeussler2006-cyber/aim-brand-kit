@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="aim:size" content="1200x630">
+<meta name="aim:about" content="Landscape banner 1200x630: LinkedIn post image, website/event header, link preview, Eventbrite.">
+<title>AIM landscape banner</title>
+<link rel="stylesheet" href="../../brand/tokens.css">
+<link rel="stylesheet" href="../../brand/components.css">
+<style>
+  .canvas { --w: 1200px; --h: 630px; --base: 22px; --pad-x: 72px; --pad-top: 64px; --pad-bottom: 60px; }
+  .layout { display: grid; grid-template-columns: 1.35fr 1fr; gap: 2em; height: 100%; }
+  .left { display: flex; flex-direction: column; }
+  .left .eyebrow { margin-top: auto; }
+  .left .headline { margin-top: 0.3em; }
+  .left .lede { margin-top: 0.8em; font-size: 1.05em; }
+  .right { display: flex; flex-direction: column; justify-content: flex-end; }
+  .facts dd { font-size: 1.15em; }
+</style>
+</head>
+<body>
+<div class="canvas theme-dark">
+  <div class="glow" style="--x: 88%; --y: 18%; --size: 120%"></div>
+  <img class="dome" src="../../brand/motifs/network-dome.svg" alt="" style="--x: 82%; --y: 26%; --size: 85%; --opacity: 0.6">
+  <div class="grain"></div>
+
+  <div class="content">
+    <div class="layout">
+      <div class="left">
+        <img class="logo" src="../../brand/logo/aim-wordmark-light.svg" alt="AIM, AI in Management Club" style="--logo-w: 7em">
+        <div class="eyebrow" data-sample>Event · Herbstsemester 26</div>
+        <h1 class="headline" style="--headline-size: 3.4em" data-sample>Kickoff<br>mit <span class="hl">PwC</span></h1>
+        <p class="lede" data-sample>Wie KI-Projekte in Unternehmen wirklich ablaufen.</p>
+      </div>
+      <div class="right">
+        <dl class="facts">
+          <div><dt>Datum</dt><dd data-sample>Mi, 23. September</dd></div>
+          <div><dt>Zeit</dt><dd data-sample>16.00 bis 17.30</dd></div>
+          <div><dt>Ort</dt><dd data-sample>SQUARE, HSG</dd></div>
+        </dl>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

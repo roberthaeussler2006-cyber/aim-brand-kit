@@ -1,0 +1,422 @@
+[
+  {
+    "file": "neural-net.svg",
+    "en": "Neural net",
+    "de": "Neural net",
+    "keywords": [
+      "ai",
+      "neural network",
+      "deep learning",
+      "model",
+      "nodes"
+    ]
+  },
+  {
+    "file": "chip.svg",
+    "en": "Chip",
+    "de": "Chip",
+    "keywords": [
+      "processor",
+      "cpu",
+      "hardware",
+      "compute",
+      "semiconductor"
+    ]
+  },
+  {
+    "file": "bot.svg",
+    "en": "Bot",
+    "de": "Bot",
+    "keywords": [
+      "robot",
+      "assistant",
+      "agent",
+      "chatbot",
+      "automation"
+    ]
+  },
+  {
+    "file": "database.svg",
+    "en": "Database",
+    "de": "Datenbank",
+    "keywords": [
+      "data",
+      "storage",
+      "sql",
+      "records",
+      "server"
+    ]
+  },
+  {
+    "file": "code.svg",
+    "en": "Code",
+    "de": "Code",
+    "keywords": [
+      "programming",
+      "terminal",
+      "developer",
+      "software",
+      "console"
+    ]
+  },
+  {
+    "file": "algorithm.svg",
+    "en": "Algorithm",
+    "de": "Algorithmus",
+    "keywords": [
+      "flowchart",
+      "logic",
+      "process",
+      "decision tree",
+      "workflow"
+    ]
+  },
+  {
+    "file": "prompt.svg",
+    "en": "Prompt / AI",
+    "de": "Prompt / AI",
+    "keywords": [
+      "generative ai",
+      "sparkle",
+      "llm",
+      "chatgpt",
+      "magic"
+    ]
+  },
+  {
+    "file": "strategy.svg",
+    "en": "Strategy",
+    "de": "Strategie",
+    "keywords": [
+      "chart",
+      "plan",
+      "trend",
+      "analytics",
+      "roadmap"
+    ]
+  },
+  {
+    "file": "growth.svg",
+    "en": "Growth",
+    "de": "Wachstum",
+    "keywords": [
+      "bar chart",
+      "increase",
+      "kpi",
+      "scale",
+      "revenue"
+    ]
+  },
+  {
+    "file": "partnership.svg",
+    "en": "Partnership",
+    "de": "Partnership",
+    "keywords": [
+      "collaboration",
+      "alliance",
+      "sponsor",
+      "cooperation",
+      "link"
+    ]
+  },
+  {
+    "file": "goal.svg",
+    "en": "Goal",
+    "de": "Ziel",
+    "keywords": [
+      "target",
+      "objective",
+      "focus",
+      "aim",
+      "okr"
+    ]
+  },
+  {
+    "file": "business.svg",
+    "en": "Business",
+    "de": "Business",
+    "keywords": [
+      "briefcase",
+      "company",
+      "career",
+      "corporate",
+      "work"
+    ]
+  },
+  {
+    "file": "presentation.svg",
+    "en": "Presentation",
+    "de": "Präsentation",
+    "keywords": [
+      "monitor",
+      "pitch",
+      "slides",
+      "screen",
+      "talk"
+    ]
+  },
+  {
+    "file": "innovation.svg",
+    "en": "Innovation",
+    "de": "Innovation",
+    "keywords": [
+      "idea",
+      "lightbulb",
+      "creativity",
+      "new",
+      "invention"
+    ]
+  },
+  {
+    "file": "community.svg",
+    "en": "Community",
+    "de": "Community",
+    "keywords": [
+      "members",
+      "people",
+      "team",
+      "club",
+      "group"
+    ]
+  },
+  {
+    "file": "event.svg",
+    "en": "Event",
+    "de": "Event",
+    "keywords": [
+      "calendar",
+      "date",
+      "schedule",
+      "meetup",
+      "agenda"
+    ]
+  },
+  {
+    "file": "speaker.svg",
+    "en": "Talk / Speaker",
+    "de": "Talk / Speaker",
+    "keywords": [
+      "microphone",
+      "keynote",
+      "talk",
+      "podcast",
+      "panel"
+    ]
+  },
+  {
+    "file": "workshop.svg",
+    "en": "Workshop",
+    "de": "Workshop",
+    "keywords": [
+      "pencil",
+      "hands-on",
+      "build",
+      "training",
+      "create"
+    ]
+  },
+  {
+    "file": "network.svg",
+    "en": "Network",
+    "de": "Netzwerk",
+    "keywords": [
+      "connections",
+      "networking",
+      "nodes",
+      "graph",
+      "contacts"
+    ]
+  },
+  {
+    "file": "certificate.svg",
+    "en": "Certificate",
+    "de": "Zertifikat",
+    "keywords": [
+      "diploma",
+      "award",
+      "credential",
+      "achievement",
+      "badge"
+    ]
+  },
+  {
+    "file": "global.svg",
+    "en": "Global",
+    "de": "Global",
+    "keywords": [
+      "world",
+      "international",
+      "globe",
+      "earth",
+      "web"
+    ]
+  },
+  {
+    "file": "knowledge.svg",
+    "en": "Knowledge",
+    "de": "Wissen",
+    "keywords": [
+      "book",
+      "learning",
+      "library",
+      "study",
+      "education"
+    ]
+  },
+  {
+    "file": "graduation.svg",
+    "en": "Graduation",
+    "de": "Uni / Abschluss",
+    "keywords": [
+      "university",
+      "degree",
+      "hsg",
+      "student",
+      "mortarboard"
+    ]
+  },
+  {
+    "file": "research.svg",
+    "en": "Research",
+    "de": "Recherche",
+    "keywords": [
+      "search",
+      "magnifier",
+      "explore",
+      "analysis",
+      "discover"
+    ]
+  },
+  {
+    "file": "exchange.svg",
+    "en": "Exchange",
+    "de": "Austausch",
+    "keywords": [
+      "swap",
+      "transfer",
+      "dialogue",
+      "trade",
+      "arrows"
+    ]
+  },
+  {
+    "file": "problem-solving.svg",
+    "en": "Problem solving",
+    "de": "Problem lösen",
+    "keywords": [
+      "puzzle",
+      "solution",
+      "challenge",
+      "case study",
+      "fit"
+    ]
+  },
+  {
+    "file": "launch.svg",
+    "en": "Launch",
+    "de": "Launch",
+    "keywords": [
+      "rocket",
+      "startup",
+      "kickoff",
+      "go live",
+      "release"
+    ]
+  },
+  {
+    "file": "feedback.svg",
+    "en": "Feedback",
+    "de": "Feedback",
+    "keywords": [
+      "star",
+      "rating",
+      "review",
+      "evaluation",
+      "favourite"
+    ]
+  },
+  {
+    "file": "mobile.svg",
+    "en": "Mobile",
+    "de": "Mobile",
+    "keywords": [
+      "phone",
+      "smartphone",
+      "app",
+      "device",
+      "social media"
+    ]
+  },
+  {
+    "file": "cloud.svg",
+    "en": "Cloud",
+    "de": "Cloud",
+    "keywords": [
+      "download",
+      "storage",
+      "saas",
+      "online",
+      "sync"
+    ]
+  },
+  {
+    "file": "share.svg",
+    "en": "Share",
+    "de": "Teilen",
+    "keywords": [
+      "social",
+      "distribute",
+      "send",
+      "connect",
+      "spread"
+    ]
+  },
+  {
+    "file": "dashboard.svg",
+    "en": "Dashboard",
+    "de": "Dashboard",
+    "keywords": [
+      "analytics",
+      "metrics",
+      "reporting",
+      "kpi",
+      "overview"
+    ]
+  },
+  {
+    "file": "message.svg",
+    "en": "Message",
+    "de": "Nachricht",
+    "keywords": [
+      "email",
+      "mail",
+      "contact",
+      "newsletter",
+      "envelope"
+    ]
+  },
+  {
+    "file": "ethics.svg",
+    "en": "Ethics",
+    "de": "Ethik",
+    "keywords": [
+      "balance",
+      "responsible ai",
+      "fairness",
+      "justice",
+      "governance"
+    ]
+  },
+  {
+    "file": "impact.svg",
+    "en": "Impact",
+    "de": "Impact",
+    "keywords": [
+      "lightning",
+      "energy",
+      "power",
+      "effect",
+      "boost"
+    ]
+  }
+]

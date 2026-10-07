@@ -1,0 +1,66 @@
+/*
+  AIM brand tokens. The ONLY place where brand values are defined.
+  Every template and design links this file and uses var(--...) instead of raw values.
+  Values match the AIM website (tailwind.config.ts, app/globals.css).
+  Changing anything here changes every design. Only the brand owner edits this file.
+*/
+
+@font-face {
+  font-family: "Inter Tight";
+  src: url("fonts/InterTight-VF.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: "Geist";
+  src: url("fonts/Geist-VF.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: block;
+}
+
+:root {
+  /* Core palette (Visual Guideline, "Sechs Kernfarben") */
+  --aim-deep: #4C2A85;      /* Tiefes Lila: glow centres, deep accents, violet surfaces */
+  --aim: #6E56CF;           /* Primär Lila: buttons, highlights, the brand signal */
+  --aim-light: #8B5CF6;     /* Highlight Lila: secondary accents, lines */
+  --aim-glow: #C4B5FD;      /* Hell-Lila Glow: eyebrows and highlights on dark */
+  --ink: #0F1115;           /* Dunkelblau: dark background, text on light */
+  --gray: #9CA3AF;          /* Dezentes Grau: muted text on dark */
+
+  /* Neutrals (website) */
+  --paper: #FAFAF8;         /* light background, text on dark */
+  --faint: #F2F2F0;         /* banded light surface */
+  --rule: #D9D9DA;          /* hairlines and 2px rules on light */
+  --muted: #6B6B6B;         /* secondary text on light */
+  --aim-subtle: #F4F2FF;    /* soft purple surface on light */
+  --white: #FFFFFF;         /* only for text on a purple pill */
+
+  /* Text opacities on dark (paper at reduced alpha, as on the website) */
+  --on-dark-strong: rgba(250, 250, 248, 0.92);
+  --on-dark: rgba(250, 250, 248, 0.75);
+  --on-dark-soft: rgba(250, 250, 248, 0.55);
+  --on-dark-faint: rgba(250, 250, 248, 0.35);
+  --line-on-dark: rgba(196, 181, 253, 0.26);
+
+  /* Type */
+  --font-display: "Inter Tight", "Helvetica Neue", Helvetica, Arial, sans-serif; /* headlines, numbers */
+  --font-body: "Geist", "Helvetica Neue", Helvetica, Arial, sans-serif;          /* everything else */
+  --weight-display: 700;
+  --tracking-display: -0.025em;    /* headlines */
+  --tracking-hero: -0.035em;       /* very large headlines (>120px) */
+  --tracking-eyebrow: 0.18em;      /* uppercase labels */
+  --tracking-subline: 0.32em;      /* "AI IN MANAGEMENT CLUB" */
+  --leading-display: 0.95;
+  --leading-body: 1.45;
+
+  /* Shape */
+  --radius-pill: 999px;
+  --radius-card: 0px;              /* cards are square, like the website */
+  --rule-width: 2px;
+
+  /* Motion and effects */
+  --grain-opacity: 0.05;
+  --ease: cubic-bezier(0.25, 0.1, 0.25, 1);
+}

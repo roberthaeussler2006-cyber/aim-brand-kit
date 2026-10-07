@@ -1,0 +1,116 @@
+<!doctype html>
+<!-- Option A "Glow" - dark hero, network-dome motif. 1080x1920, render at 2x. -->
+<html lang="de"><head><meta charset="utf-8"><title>AIM Kickoff - Glow</title>
+<link rel="stylesheet" href="_base.css">
+<style>
+  .stage { background: var(--ink); color: var(--paper); }
+  .aura {
+    position: absolute; left: 50%; top: 700px; width: 1900px; height: 1900px;
+    transform: translate(-50%, -50%);
+    background:
+      radial-gradient(circle at 50% 50%, rgba(139,92,246,0.55) 0%, rgba(110,86,207,0.34) 26%, rgba(76,42,133,0.20) 44%, rgba(15,17,21,0) 66%);
+  }
+  .dome { position: absolute; left: 50%; top: 700px; transform: translate(-50%,-50%); }
+  .vignette {
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 120% 78% at 50% 34%, rgba(15,17,21,0) 38%, rgba(15,17,21,0.82) 82%, rgba(15,17,21,0.97) 100%);
+  }
+  .content { position: absolute; inset: 0; padding: 196px 88px 244px; display: flex; flex-direction: column; }
+
+  .brand { display: flex; flex-direction: column; align-items: flex-start; }
+  .brand svg { width: 178px; display: block; margin-left: -3px; }
+  .brand .submark { margin-top: 15px; color: rgba(250,250,248,0.62); }
+
+  .head { margin-top: 196px; }
+  .head .eyebrow { color: var(--glow); }
+  h1 {
+    margin-top: 30px;
+    font-size: 172px; font-weight: 700; line-height: 0.845;
+    letter-spacing: -0.055em; margin-left: -10px;
+  }
+  h1 em { font-style: normal; color: var(--glow); }
+
+  .lede {
+    margin-top: 44px; max-width: 790px;
+    font-size: 35px; line-height: 1.28; letter-spacing: -0.015em;
+    font-weight: 400; color: rgba(250,250,248,0.80);
+  }
+  .speaker { margin-top: 30px; font-size: 27px; line-height: 1.42; color: rgba(250,250,248,0.58); }
+  .speaker b { font-weight: 700; color: rgba(250,250,248,0.95); }
+
+  .facts { margin-top: auto; }
+  .facts .row {
+    display: flex; align-items: baseline; gap: 30px;
+    border-top: 1px solid rgba(196,181,253,0.26);
+    padding: 26px 0 24px;
+  }
+  .facts dt { flex: none; width: 168px; font-size: 18px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--glow); font-weight: 500; }
+  .facts dd { font-size: 37px; font-weight: 700; letter-spacing: -0.025em; line-height: 1.16; }
+  .facts dd small { display: block; font-size: 24px; font-weight: 400; letter-spacing: 0; color: rgba(250,250,248,0.55); margin-top: 6px; }
+
+  .cta { margin-top: 56px; display: flex; align-items: center; gap: 22px; }
+  .cta .pill {
+    background: var(--purple); color: #fff; font-size: 30px; font-weight: 700;
+    letter-spacing: -0.015em; padding: 24px 44px; border-radius: 999px;
+  }
+  .cta .url { font-size: 26px; color: rgba(250,250,248,0.55); letter-spacing: -0.01em; }
+  .free { margin-top: 26px; font-size: 23px; color: rgba(250,250,248,0.45); }
+</style></head>
+<body><div class="stage">
+  <div class="aura"></div>
+  <svg class="dome" width="1500" height="1500" viewBox="0 0 1500 1500" fill="none">
+    <g stroke="#C4B5FD" stroke-width="1.1">
+      <circle cx="750" cy="750" r="250" opacity="0.20"/>
+      <circle cx="750" cy="750" r="385" opacity="0.15"/>
+      <circle cx="750" cy="750" r="520" opacity="0.11"/>
+      <circle cx="750" cy="750" r="655" opacity="0.075"/>
+      <ellipse cx="750" cy="750" rx="655" ry="230" opacity="0.10"/>
+      <ellipse cx="750" cy="750" rx="655" ry="430" opacity="0.075"/>
+      <ellipse cx="750" cy="750" rx="230" ry="655" opacity="0.10"/>
+      <ellipse cx="750" cy="750" rx="430" ry="655" opacity="0.075"/>
+    </g>
+    <g fill="#C4B5FD">
+      <circle cx="750" cy="95" r="4.5" opacity="0.55"/>
+      <circle cx="1405" cy="750" r="4.5" opacity="0.45"/>
+      <circle cx="750" cy="1405" r="4.5" opacity="0.30"/>
+      <circle cx="95" cy="750" r="4.5" opacity="0.45"/>
+      <circle cx="1213" cy="287" r="3.5" opacity="0.40"/>
+      <circle cx="287" cy="287" r="3.5" opacity="0.40"/>
+      <circle cx="750" cy="500" r="3" opacity="0.5"/>
+      <circle cx="1002" cy="1002" r="3.5" opacity="0.28"/>
+    </g>
+  </svg>
+  <div class="vignette"></div>
+  <div class="grain" style="opacity:.055; mix-blend-mode:overlay"></div>
+
+  <div class="content">
+    <div class="brand">
+      <svg viewBox="0 0 380 82" fill="#FAFAF8"><g transform="translate(0,82) scale(0.1,-0.1)">
+        <path d="M677 568 c-40 -71 -227 -425 -227 -430 0 -8 63 1 71 10 4 4 51 90 104 192 53 102 100 189 104 193 4 4 54 -83 111 -193 57 -110 109 -200 115 -200 5 0 20 -3 33 -6 13 -4 22 -2 22 5 0 7 -55 115 -122 241 -121 226 -123 230 -155 230 -27 0 -36 -6 -56 -42z"/>
+        <path d="M1540 375 l0 -235 30 0 30 0 0 235 0 235 -30 0 -30 0 0 -235z"/>
+        <path d="M2122 373 l3 -237 30 0 30 0 5 189 5 188 116 -121 c65 -67 121 -122 127 -122 5 0 60 54 122 120 61 66 115 120 118 120 4 0 6 -83 4 -185 l-3 -185 36 0 35 0 0 235 0 235 -34 0 c-31 0 -47 -13 -158 -126 l-123 -126 -123 126 c-111 114 -126 126 -158 126 l-34 0 2 -237z"/>
+      </g></svg>
+      <div class="submark">AI in Management Club</div>
+    </div>
+
+    <div class="head">
+      <div class="eyebrow">Herbstsemester 26</div>
+      <h1>Kickoff<br>mit <em>PwC</em></h1>
+    </div>
+
+    <p class="lede">Wie KI-Projekte in Unternehmen wirklich ablaufen, woran sie scheitern und was das für deinen Berufseinstieg heisst.</p>
+    <p class="speaker"><b>Keynote: Matteo Biondi</b><br>Director AI &amp; Data bei PwC, davor McKinsey.</p>
+
+    <dl class="facts">
+      <div class="row"><dt>Datum</dt><dd>Mittwoch, 23. September</dd></div>
+      <div class="row"><dt>Zeit</dt><dd>16.00 bis 17.30 Uhr</dd></div>
+      <div class="row"><dt>Ort</dt><dd>SQUARE, HSG<small>Räume Vadian &amp; Gallus</small></dd></div>
+    </dl>
+
+    <div class="cta">
+      <div class="pill">Jetzt anmelden</div>
+      <div class="url">aim-club.ch/events</div>
+    </div>
+    <div class="free">Eintritt frei. Offen für alle, keine Vorkenntnisse nötig.</div>
+  </div>
+</div></body></html>

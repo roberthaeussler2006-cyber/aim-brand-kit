@@ -1,0 +1,29 @@
+/* Shared reset + brand tokens for the kickoff Instagram stories (1080x1920). */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --ink: #0F1115;
+  --deep: #4C2A85;
+  --purple: #6E56CF;
+  --light: #8B5CF6;
+  --glow: #C4B5FD;
+  --paper: #FAFAF8;
+  --gray2: #9CA3AF;
+  --muted: #6B6B6B;
+  --rule: #D9D9DA;
+}
+html, body { width: 1080px; height: 1920px; overflow: hidden; }
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: geometricPrecision;
+  font-synthesis: none;
+}
+.stage { position: relative; width: 1080px; height: 1920px; overflow: hidden; }
+/* Film grain, keeps the flat purple from banding. */
+.grain {
+  position: absolute; inset: 0; pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 300px 300px;
+}
+.eyebrow { font-size: 19px; letter-spacing: 0.3em; text-transform: uppercase; font-weight: 500; }
+.submark { font-size: 15px; letter-spacing: 0.34em; text-transform: uppercase; font-weight: 500; }

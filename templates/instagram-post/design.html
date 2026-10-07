@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="aim:size" content="1080x1350">
+<meta name="aim:about" content="Instagram feed post 1080x1350 (4:5), dark, mountain photo. Events, announcements.">
+<title>AIM Instagram post</title>
+<link rel="stylesheet" href="../../brand/tokens.css">
+<link rel="stylesheet" href="../../brand/components.css">
+<style>
+  .canvas { --w: 1080px; --h: 1350px; --base: 30px; --pad-x: 80px; --pad-top: 76px; --pad-bottom: 76px; }
+  .top { display: flex; justify-content: space-between; align-items: flex-start; }
+  .head { margin-top: auto; }
+  .head .headline { margin-top: 0.2em; }
+  .lede { margin-top: 0.9em; max-width: 24em; }
+  .bottom { margin-top: 1.6em; display: flex; justify-content: space-between; align-items: flex-end; gap: 1em; }
+  .when { font-family: var(--font-display); font-weight: 700; font-size: 1.15em; line-height: 1.25; letter-spacing: -0.01em; }
+  .when span { display: block; font-family: var(--font-body); font-weight: 400; font-size: 0.75em; color: var(--fg-faint); letter-spacing: 0; }
+</style>
+</head>
+<body>
+<div class="canvas theme-dark">
+  <div class="photo"><img src="../../brand/photos/mountains.jpg" alt="" style="--focus: 50% 35%"></div>
+  <div class="grain"></div>
+
+  <div class="content">
+    <div class="top">
+      <img class="logo" src="../../brand/logo/aim-wordmark-light.svg" alt="AIM, AI in Management Club" style="--logo-w: 6em">
+      <div class="badge" data-sample>Workshop</div>
+    </div>
+
+    <div class="head">
+      <div class="eyebrow eyebrow--dash" data-sample>Learning Journey · Session 1</div>
+      <h1 class="headline" style="--headline-size: 3.7em" data-sample>Prompting für<br><span class="hl">Pitch-Decks.</span></h1>
+      <p class="lede" data-sample>Zwei Stunden, ein Laptop, echte Fälle aus Beratung und Banking.</p>
+    </div>
+
+    <div class="bottom">
+      <div class="when" data-sample>Donnerstag, 15. Oktober<span>18.15 Uhr · Raum 01-012, HSG</span></div>
+      <div class="pill">Anmelden <span class="pill__arrow">→</span></div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

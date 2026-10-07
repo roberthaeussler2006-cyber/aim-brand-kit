@@ -1,0 +1,92 @@
+<!doctype html>
+<!-- Option C "Date" - the date carries the poster. Dark top, paper foot. 1080x1920. -->
+<html lang="de"><head><meta charset="utf-8"><title>AIM Kickoff - Date</title>
+<link rel="stylesheet" href="_base.css">
+<style>
+  .stage { background: var(--paper); color: var(--ink); }
+  .top {
+    position: absolute; left: 0; right: 0; top: 0; height: 1218px;
+    background: var(--ink); overflow: hidden;
+  }
+  .top .wash {
+    position: absolute; left: 50%; top: 58%; width: 1700px; height: 1400px; transform: translate(-50%,-50%);
+    background: radial-gradient(circle at 50% 50%, rgba(139,92,246,0.50) 0%, rgba(110,86,207,0.26) 34%, rgba(15,17,21,0) 68%);
+  }
+  .top .lines { position: absolute; left: 0; right: 0; bottom: 0; height: 640px; }
+
+  .content { position: absolute; inset: 0; padding: 196px 84px 238px; display: flex; flex-direction: column; }
+
+  .brand svg { width: 166px; display: block; margin-left: -3px; }
+  .brand .submark { margin-top: 14px; color: rgba(250,250,248,0.60); }
+
+  .kicker { margin-top: 104px; color: var(--glow); }
+
+  .date { margin-top: 26px; color: var(--paper); display: flex; align-items: flex-start; gap: 34px; }
+  .date .num { font-size: 300px; font-weight: 700; line-height: 0.76; letter-spacing: -0.075em; margin-left: -16px; }
+  .date .mo { margin-top: 26px; font-size: 52px; font-weight: 700; line-height: 1.02; letter-spacing: -0.035em; }
+  .date .mo span { display: block; font-size: 27px; font-weight: 400; letter-spacing: 0.02em; color: rgba(250,250,248,0.62); margin-top: 12px; }
+
+  h1 {
+    margin-top: 72px; color: var(--paper);
+    font-size: 96px; font-weight: 700; line-height: 0.92; letter-spacing: -0.05em; margin-left: -6px;
+  }
+  h1 em { font-style: normal; color: var(--glow); }
+
+  .where { margin-top: 34px; font-size: 29px; line-height: 1.45; color: rgba(250,250,248,0.72); }
+  .where b { font-weight: 700; color: var(--paper); }
+
+  .foot { position: absolute; left: 84px; right: 84px; top: 1318px; }
+  .foot .lede { font-size: 33px; line-height: 1.26; letter-spacing: -0.018em; font-weight: 500; max-width: 800px; }
+  .foot .speaker { margin-top: 22px; font-size: 25px; line-height: 1.42; color: var(--muted); }
+  .foot .speaker b { font-weight: 700; color: var(--ink); }
+  .foot .cta { margin-top: 40px; display: flex; align-items: center; gap: 22px; }
+  .foot .pill { background: var(--ink); color: var(--paper); font-size: 29px; font-weight: 700; letter-spacing: -0.015em; padding: 23px 42px; border-radius: 999px; }
+  .foot .url { font-size: 25px; color: var(--muted); }
+</style></head>
+<body><div class="stage">
+  <div class="top">
+    <div class="wash"></div>
+    <svg class="lines" viewBox="0 0 1080 640" fill="none" preserveAspectRatio="none">
+      <g stroke="#C4B5FD" stroke-width="1">
+        <path d="M-40 640 C 220 400, 400 560, 620 330 S 940 180, 1120 60" opacity="0.16"/>
+        <path d="M-40 640 C 260 470, 470 620, 700 400 S 980 280, 1120 190" opacity="0.12"/>
+        <path d="M-40 640 C 300 540, 540 660, 780 470 S 1020 380, 1120 320" opacity="0.09"/>
+      </g>
+      <g fill="#C4B5FD">
+        <circle cx="620" cy="330" r="4" opacity="0.5"/>
+        <circle cx="700" cy="400" r="3.5" opacity="0.4"/>
+        <circle cx="780" cy="470" r="3" opacity="0.3"/>
+      </g>
+    </svg>
+  </div>
+  <div class="grain" style="opacity:.05; mix-blend-mode:overlay"></div>
+
+  <div class="content">
+    <div class="brand">
+      <svg viewBox="0 0 380 82" fill="#FAFAF8"><g transform="translate(0,82) scale(0.1,-0.1)">
+        <path d="M677 568 c-40 -71 -227 -425 -227 -430 0 -8 63 1 71 10 4 4 51 90 104 192 53 102 100 189 104 193 4 4 54 -83 111 -193 57 -110 109 -200 115 -200 5 0 20 -3 33 -6 13 -4 22 -2 22 5 0 7 -55 115 -122 241 -121 226 -123 230 -155 230 -27 0 -36 -6 -56 -42z"/>
+        <path d="M1540 375 l0 -235 30 0 30 0 0 235 0 235 -30 0 -30 0 0 -235z"/>
+        <path d="M2122 373 l3 -237 30 0 30 0 5 189 5 188 116 -121 c65 -67 121 -122 127 -122 5 0 60 54 122 120 61 66 115 120 118 120 4 0 6 -83 4 -185 l-3 -185 36 0 35 0 0 235 0 235 -34 0 c-31 0 -47 -13 -158 -126 l-123 -126 -123 126 c-111 114 -126 126 -158 126 l-34 0 2 -237z"/>
+      </g></svg>
+      <div class="submark">AI in Management Club</div>
+    </div>
+
+    <div class="eyebrow kicker">Mittwoch</div>
+    <div class="date">
+      <div class="num">23</div>
+      <div class="mo">September<span>16.00 – 17.30 Uhr</span></div>
+    </div>
+
+    <h1>Kickoff<br>mit <em>PwC</em></h1>
+    <p class="where"><b>SQUARE, Universität St. Gallen</b><br>Räume Vadian &amp; Gallus</p>
+
+    <div class="foot">
+      <p class="lede">Wie KI-Projekte in Unternehmen wirklich ablaufen und woran sie scheitern.</p>
+      <p class="speaker"><b>Keynote: Matteo Biondi</b>, Director AI &amp; Data bei PwC, davor McKinsey. Danach Q&amp;A, Apéro und Networking. Eintritt frei.</p>
+      <div class="cta">
+        <div class="pill">Jetzt anmelden</div>
+        <div class="url">aim-club.ch/events</div>
+      </div>
+    </div>
+  </div>
+</div></body></html>

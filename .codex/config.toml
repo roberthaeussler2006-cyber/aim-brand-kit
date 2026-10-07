@@ -1,0 +1,7 @@
+# Project settings for OpenAI Codex. Loaded after you trust this folder.
+# Network access is needed once, so "npm run setup" can download the renderer.
+sandbox_mode = "workspace-write"
+approval_policy = "on-request"
+
+[sandbox_workspace_write]
+network_access = true

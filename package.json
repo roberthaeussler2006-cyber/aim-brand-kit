@@ -1,0 +1,18 @@
+{
+  "name": "aim-brand-kit",
+  "private": true,
+  "type": "module",
+  "description": "AIM Club brand kit: every AIM design is made here.",
+  "scripts": {
+    "setup": "npm install && npx playwright install chromium",
+    "new": "node scripts/new.mjs",
+    "render": "node scripts/render.mjs",
+    "check": "node scripts/render.mjs --check",
+    "previews": "node scripts/render.mjs --previews",
+    "qr": "node scripts/qr.mjs"
+  },
+  "dependencies": {
+    "playwright": "^1.56.0",
+    "qrcode": "^1.5.4"
+  }
+}
