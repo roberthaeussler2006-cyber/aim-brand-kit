@@ -10,7 +10,7 @@
 <style>
   /* 216 x 303 mm = A4 plus 3 mm bleed. For office printing the bleed is simply trimmed off. */
   @page { size: 216mm 303mm; }
-  .canvas { --w: 216mm; --h: 303mm; --base: 3.9mm; --pad-x: 21mm; --pad-top: 19mm; --pad-bottom: 15mm; }
+  .canvas { --w: 216mm; --h: 303mm; --base: 3.9mm; --pad-x: 21mm; --pad-top: 19mm; --pad-bottom: 15mm; --min-text: 7.5pt; }
   .header { display: flex; justify-content: space-between; align-items: center; padding-bottom: 5mm; border-bottom: 2px solid var(--ink); }
   .header .eyebrow { color: var(--muted); }
   h1.headline { margin-top: 1.3em; }
@@ -33,7 +33,7 @@
 <div class="canvas theme-light">
   <div class="content">
     <div class="header">
-      <img class="logo" src="../../brand/logo/aim-wordmark-dark.svg" alt="AIM, AI in Management Club" style="--logo-w: 9em">
+      <img class="logo" src="../../brand/logo/aim-wordmark-dark.svg" alt="AIM, AI in Management Club" style="--logo-w: 9.5em">
       <span class="eyebrow" data-sample>Factsheet · 2026</span>
     </div>
 

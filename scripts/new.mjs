@@ -5,7 +5,7 @@
 //
 // Without arguments it lists the templates.
 
-import { cpSync, existsSync, readdirSync, readFileSync, rmSync } from "node:fs";
+import { cpSync, existsSync, readdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -32,7 +32,7 @@ if (!list.includes(template)) {
 }
 
 const slug = name.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
-const today = new Date().toISOString().slice(0, 10);
+const today = new Date().toLocaleDateString("sv-SE"); // local date, YYYY-MM-DD
 const dest = path.join(ROOT, "output", `${today}-${slug}`);
 if (existsSync(dest)) {
   console.error(`${path.relative(ROOT, dest)} already exists. Pick another name or keep working in that folder.`);
@@ -40,4 +40,7 @@ if (existsSync(dest)) {
 }
 cpSync(path.join(TEMPLATES, template), dest, { recursive: true });
 rmSync(path.join(dest, "preview.png"), { force: true });
+// Remember the template so the brand check can spot sample text that was left in.
+const designFile = path.join(dest, "design.html");
+writeFileSync(designFile, readFileSync(designFile, "utf8").replace("<head>", `<head>\n<meta name="aim:template" content="${template}">`));
 console.log(`Created ${path.relative(ROOT, dest)}/design.html from template "${template}".`);

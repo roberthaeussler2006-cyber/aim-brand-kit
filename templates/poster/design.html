@@ -3,29 +3,32 @@
 <head>
 <meta charset="utf-8">
 <meta name="aim:print" content="A3">
-<meta name="aim:about" content="Print poster A3 with 3 mm bleed, light, QR code. Also prints as A4 or A5 (npm run render -- ... --paper A4).">
+<meta name="aim:about" content="Print poster A3 with 3 mm bleed, light, photo band, QR code. Same layout works for A4 and A5 (see guide/formats.md).">
 <title>AIM poster</title>
 <link rel="stylesheet" href="../../brand/tokens.css">
 <link rel="stylesheet" href="../../brand/components.css">
 <style>
-  /* 303 x 426 mm = A3 plus 3 mm bleed on each side. Keep text 15 mm inside the trim (18 mm from the edge). */
+  /* Paper size: change these four lines together, values per size in guide/formats.md.
+     A3 = 303 x 426 mm including 3 mm bleed on each side. */
   @page { size: 303mm 426mm; }
-  .canvas { --w: 303mm; --h: 426mm; --base: 6.2mm; --pad-x: 25mm; --pad-top: 25mm; --pad-bottom: 23mm; }
-  .band { position: absolute; left: 0; right: 0; top: 0; height: 128mm; overflow: hidden; z-index: 0; background: var(--ink); }
+  .canvas { --w: 303mm; --h: 426mm; --base: 6.2mm; --pad-x: 25mm; --pad-top: 25mm; --pad-bottom: 23mm; --min-text: 7.5pt; }
+
+  /* Everything below is in em (relative to --base) or relative to the page, so it scales with the paper. */
+  .band { position: absolute; left: 0; right: 0; top: 0; height: 30%; overflow: hidden; z-index: 0; background: var(--ink); }
   .band .photo img { object-position: 50% 30%; }
-  .top { position: relative; height: 103mm; display: flex; flex-direction: column; justify-content: space-between; }
-  .top .eyebrow { color: var(--aim-glow); font-size: 0.7em; }
-  .headline { margin-top: 1.5em; }
+  .top { flex: none; height: calc(var(--h) * 0.30 - var(--pad-top)); display: flex; flex-direction: column; justify-content: space-between; padding-bottom: 2.2em; }
+  .top .eyebrow { color: var(--aim-glow); font-size: max(0.75em, var(--min-text)); }
+  .headline { margin-top: 0.38em; } /* em of the headline itself: keep small */
   .lede { margin-top: 0.7em; font-size: 1.75em; color: var(--ink); font-weight: 500; line-height: 1.12; max-width: 17em; }
   .text { margin-top: 0.9em; font-size: 1em; color: var(--ink); }
-  .facts { margin-top: auto; display: grid; grid-template-columns: 1.25fr 0.85fr 1fr; column-gap: 8mm; }
-  .facts > div { display: block; border-top-width: 0.7mm; padding-top: 3.5mm; }
+  .facts { margin-top: auto; padding-top: 2.2em; display: grid; grid-template-columns: 1.25fr 0.85fr 1fr; column-gap: 1.3em; }
+  .facts > div { display: block; border-top-width: 0.11em; padding-top: 0.55em; }
   .facts dt { width: auto; }
   .facts dd { margin-top: 0.3em; font-size: 1.2em; }
-  .signup { margin-top: 2.4em; display: flex; justify-content: space-between; align-items: flex-end; gap: 10mm; }
+  .signup { margin-top: 2.4em; display: flex; justify-content: space-between; align-items: flex-end; gap: 1.6em; }
   .signup .cta-big { font-family: var(--font-display); font-weight: 700; font-size: 2.75em; letter-spacing: -0.025em; line-height: 1; }
   .signup p { margin-top: 0.8em; font-size: 0.95em; line-height: 1.35; color: var(--muted); }
-  .qr { --qr-w: 62mm; padding: 0; }
+  .qr { --qr-w: 10em; padding: 0; }
 </style>
 </head>
 <body>
@@ -35,7 +38,7 @@
 
   <div class="content">
     <div class="top">
-      <img class="logo" src="../../brand/logo/aim-wordmark-light.svg" alt="AIM, AI in Management Club" style="--logo-w: 10.5em">
+      <img class="logo" src="../../brand/logo/aim-wordmark-light.svg" alt="AIM, AI in Management Club" style="--logo-w: max(10.5em, 36mm)">
       <div class="eyebrow" data-sample>Event · Herbstsemester 26</div>
     </div>
 

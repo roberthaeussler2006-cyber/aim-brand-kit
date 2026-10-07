@@ -25,7 +25,11 @@ We care about AI in pitch decks, risk frameworks and client reporting. "Nicht im
 - **German: "du"**, never "Sie" (unless the user asks for a formal document for companies).
 - **Swiss spelling:** "ss" instead of "ß" (heisst, gross, Strasse). Times as 16.00 Uhr, ranges as "16.00 bis 17.30 Uhr".
   Dates as "Mittwoch, 23. September". Prices as "CHF 40".
+- **Places:** room codes as the HSG writes them, with "Raum" and the campus: "Raum 01-U127, HSG". Named venues as
+  "SQUARE, HSG". Never guess a building or room.
+- **Times:** never assume a start or end time. "Dienstagabend" is not a time; ask.
 - **English:** British spelling (organise, programme), dates as "Wednesday, 23 September", times as "4 pm" or "16:00".
+- **Typography:** typographic apostrophes in English (we’re, don’t). German quotes in Swiss style: «so».
 - Keep company and product names exactly as written by the company: PwC, McKinsey, UBS, OpenAI, Claude, ChatGPT.
 - **Never invent facts.** Dates, times, rooms, speakers, titles, prices, partner names and numbers come from the user.
   If something is missing, ask or leave it out.

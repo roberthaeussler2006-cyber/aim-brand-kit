@@ -35,6 +35,10 @@ documents, editorial posts, recruiting, anything text-heavy.
 Never mix recipes randomly inside one design. A poster may have a dark photo band on top of a light page
 (see `templates/poster`), but each zone follows one recipe completely.
 
+Multi-page designs (carousels, slides, documents): each page follows one recipe. Pages may switch between
+dark and light on purpose (e.g. dark cover, light content pages); violet only for the last page. All dark
+is always fine. Keep the logo, page counter and headline in the same position on every page.
+
 ## Typography
 
 - **Inter Tight Bold (700)** for headlines, big numbers and buttons: `var(--font-display)`.
@@ -71,12 +75,17 @@ Files in `brand/logo/`:
 
 - **Mountains** are our landscape: `brand/photos/mountains.jpg`, `dark-peak.jpg`, `matterhorn.jpg`.
   Always under the ink wash (`.photo`), desaturated, calm. They stand for the climb: learning step by step.
+- **Climb illustration** (`brand/motifs/climb-mountain.svg`, `climb-mountain-route.svg` with the violet route,
+  base camp and summit flag): the Learning Journey drawn as a climb, from the club deck. Light designs only,
+  full width at the bottom of a page or slide.
 - **Network dome** (`brand/motifs/network-dome.svg`) is the central brand motif for AI and connection.
   Behind headlines, partly cropped, never in front of text.
 - **Real people**: board portraits in `brand/photos/team/` and event photos the user provides.
 - **Icons**: `brand/icons/` (35 line icons from the guideline, see `icons.json` for German and English names).
   Use them at the same size in a row, in the accent colour.
 - No AI-generated images, no stock photos of robots, glowing brains, handshakes or circuit-board heads.
+  The `bot` icon is a small pictogram in an icon row, not a substitute when someone asks for "robot images".
+- For recaps and event posts, real photos from the event beat everything else. Ask for them.
 - Partner logos only when the user confirms the partnership is official, and only in a neutral row
   (all in paper on dark or ink on light), never bigger than our logo.
 

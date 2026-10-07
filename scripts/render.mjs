@@ -3,7 +3,6 @@
 //   npm run render -- output/2026-10-07-kickoff-story/design.html          PNG (and PDF for print formats)
 //   npm run render -- output/.../design.html --hd                          PNG at 2x resolution
 //   npm run render -- output/.../design.html --pdf                         also a PDF (all pages) for screen formats
-//   npm run render -- output/.../design.html --paper A4                    print: extra PDF scaled to A4 (or A5)
 //   npm run check  -- output/.../design.html                               brand check only, no files written
 //   npm run previews                                                       re-render every templates/*/preview.png
 //
@@ -35,14 +34,13 @@ const PALETTE = {
 const FONTS = ["inter tight", "geist"];
 
 function parseArgs(argv) {
-  const args = { files: [], hd: false, pdf: false, paper: null, check: false, previews: false };
+  const args = { files: [], hd: false, pdf: false, check: false, previews: false };
   for (let i = 0; i < argv.length; i++) {
     const a = argv[i];
     if (a === "--hd") args.hd = true;
     else if (a === "--pdf") args.pdf = true;
     else if (a === "--check") args.check = true;
     else if (a === "--previews") args.previews = true;
-    else if (a === "--paper") args.paper = argv[++i];
     else args.files.push(a);
   }
   return args;
@@ -74,7 +72,7 @@ async function launch() {
 }
 
 // Runs inside the page. Returns a list of problems.
-function inspect({ palette, fonts, minPx }) {
+function inspect({ palette, fonts, minPx, samples, wordmarkMin }) {
   const issues = [];
   const canvases = [...document.querySelectorAll(".canvas")];
   if (!canvases.length) return [{ level: "error", msg: 'No element with class "canvas" found.' }];
@@ -87,11 +85,44 @@ function inspect({ palette, fonts, minPx }) {
   const seenColor = new Set();
 
   for (const el of document.querySelectorAll("[data-sample]")) {
-    issues.push({ level: "warn", msg: `Sample text from the template is still in the design: ${describe(el)}. Replace it and remove data-sample.` });
+    issues.push({ level: "error", msg: `Sample text from the template is still marked (data-sample): ${describe(el)}. Replace it with real content or delete it, then remove data-sample.` });
+  }
+
+  // Sample sentences from the template that survived without their data-sample marker.
+  const bodyText = document.body.innerText.replace(/\s+/g, " ");
+  for (const sample of samples) {
+    if (bodyText.includes(sample)) issues.push({ level: "error", msg: `Template sample text is still in the design: "${sample.slice(0, 60)}". Replace or delete it, unless the user confirmed this exact text.` });
   }
 
   for (const canvas of canvases) {
   const box = canvas.getBoundingClientRect();
+
+  // Text that collides with other text or with a rule line.
+  // Glyph box of the text, clipped to the layout box of its block (tight line-heights make glyph boxes taller than the line).
+  const textRect = (el) => {
+    const range = document.createRange();
+    range.selectNodeContents(el);
+    const g = range.getBoundingClientRect();
+    let block = el;
+    while (block.parentElement && getComputedStyle(block).display.startsWith("inline")) block = block.parentElement;
+    const b = block.getBoundingClientRect();
+    return { left: g.left, right: g.right, top: Math.max(g.top, b.top), bottom: Math.min(g.bottom, b.bottom) };
+  };
+  const blocks = [...canvas.querySelectorAll(".content *")].filter((el) => {
+    const cs = getComputedStyle(el);
+    if (cs.display === "none" || cs.visibility === "hidden" || decorative(el)) return false;
+    return [...el.childNodes].some((n) => n.nodeType === 3 && n.textContent.trim());
+  });
+  const rects = blocks.map((el) => [el, textRect(el)]);
+  for (let i = 0; i < rects.length; i++) {
+    for (let j = i + 1; j < rects.length; j++) {
+      const [a, ra] = rects[i], [b, rb] = rects[j];
+      if (a.contains(b) || b.contains(a)) continue;
+      const w = Math.min(ra.right, rb.right) - Math.max(ra.left, rb.left);
+      const h = Math.min(ra.bottom, rb.bottom) - Math.max(ra.top, rb.top);
+      if (w > 2 && h > 2) issues.push({ level: "warn", msg: `Text overlaps other text: ${describe(a)} and ${describe(b)}` });
+    }
+  }
   for (const el of canvas.querySelectorAll("*")) {
     const cs = getComputedStyle(el);
     if (cs.display === "none" || cs.visibility === "hidden") continue;
@@ -117,7 +148,7 @@ function inspect({ palette, fonts, minPx }) {
       const family = cs.fontFamily.split(",")[0].replace(/["']/g, "").trim().toLowerCase();
       if (!fonts.includes(family)) issues.push({ level: "error", msg: `Font "${family}" is not a brand font (${describe(el)}). Use var(--font-display) or var(--font-body).` });
       if (cs.fontStyle === "italic" || cs.fontStyle.startsWith("oblique")) issues.push({ level: "error", msg: `Italic text (${describe(el)}). AIM never uses italics.` });
-      if (parseFloat(cs.fontSize) < minPx) issues.push({ level: "warn", msg: `Text is ${parseFloat(cs.fontSize).toFixed(0)}px, small for this format (minimum ${minPx}px): ${describe(el)}` });
+      if (parseFloat(cs.fontSize) < minPx) issues.push({ level: "warn", msg: `Text is too small for this format (${parseFloat(cs.fontSize).toFixed(1)}px, minimum ${minPx.toFixed(1)}px): ${describe(el)}` });
       if (el.scrollWidth > el.clientWidth + 2 && cs.overflow !== "visible") issues.push({ level: "warn", msg: `Text is cut off: ${describe(el)}` });
     }
 
@@ -140,11 +171,26 @@ function inspect({ palette, fonts, minPx }) {
         const actual = r.width / r.height;
         if (Math.abs(natural / actual - 1) > 0.02) issues.push({ level: "error", msg: `The logo is stretched or squashed (${src}). Set only its width.` });
         if (r.width < box.width * 0.04) issues.push({ level: "warn", msg: `The logo is very small (${Math.round(r.width)}px wide).` });
+        if (/wordmark/.test(src) && wordmarkMin && r.width < wordmarkMin) issues.push({ level: "warn", msg: `The wordmark is too small for its subline "AI IN MANAGEMENT CLUB" to be readable. Make it at least ${Math.ceil(wordmarkMin / r.width * 100)}% of its current width, or use the mark (aim-mark-*.svg).` });
       }
     }
   }
   }
   return issues;
+}
+
+// Text of every data-sample element in the template this design was made from (meta aim:template).
+function templateSamples(html) {
+  const name = html.match(/<meta\s+name="aim:template"\s+content="([\w-]+)"/i)?.[1];
+  const file = name && path.join(ROOT, "templates", name, "design.html");
+  if (!file || !existsSync(file)) return [];
+  const source = readFileSync(file, "utf8");
+  const out = new Set();
+  for (const m of source.matchAll(/<(\w+)[^>]*\bdata-sample\b[^>]*>([\s\S]*?)<\/\1>/g)) {
+    const text = m[2].replace(/<[^>]+>/g, " ").replace(/&nbsp;/g, " ").replace(/&amp;/g, "&").replace(/\s+/g, " ").trim();
+    if (text.length >= 8) out.add(text);
+  }
+  return [...out];
 }
 
 // <img class="icon" src=".../brand/icons/chip.svg"> is swapped for the inline SVG so the icon
@@ -184,7 +230,8 @@ async function renderOne(browser, file, opts) {
 
   // Minimum readable text: 7 pt in print, about 1/56 of the short side on screens.
   const minPx = fmt.kind === "print" ? 7 * (96 / 72) : Math.max(12, Math.round(Math.min(fmt.w, fmt.h) / 56));
-  let issues = await page.evaluate(inspect, { palette: PALETTE, fonts: FONTS, minPx });
+  const wordmarkMin = fmt.kind === "print" ? 35 * MM : Math.round(Math.min(fmt.w, fmt.h) * 0.2);
+  let issues = await page.evaluate(inspect, { palette: PALETTE, fonts: FONTS, minPx, samples: templateSamples(html), wordmarkMin });
   if (opts.previewPath) issues = issues.filter((i) => !i.msg.startsWith("Sample text"));
 
   const out = [];
@@ -205,13 +252,6 @@ async function renderOne(browser, file, opts) {
       if (!opts.previewPath) {
         await page.pdf({ ...pdfOpts, ...size, path: `${base}.pdf` });
         out.push(`${base}.pdf`);
-      }
-      if (fmt.kind === "print" && opts.paper && !opts.previewPath) {
-        const target = PAPER[opts.paper];
-        if (!target) throw new Error(`Unknown paper "${opts.paper}".`);
-        const k = (target[0] + 2 * BLEED) / fmt.wmm;
-        await page.pdf({ ...pdfOpts, width: `${target[0] + 2 * BLEED}mm`, height: `${target[1] + 2 * BLEED}mm`, scale: k, path: `${base}-${opts.paper}.pdf` });
-        out.push(`${base}-${opts.paper}.pdf`);
       }
     }
   }
@@ -242,7 +282,7 @@ async function main() {
       .map((d) => ({ file: path.join(dir, d.name, "design.html"), previewPath: path.join(dir, d.name, "preview.png") }));
   }
   if (!jobs.length) {
-    console.log("Usage: npm run render -- path/to/design.html [--hd] [--pdf] [--paper A4]\n       npm run check -- path/to/design.html");
+    console.log("Usage: npm run render -- path/to/design.html [--hd] [--pdf]\n       npm run check -- path/to/design.html");
     process.exit(1);
   }
   const browser = await launch();

@@ -13,7 +13,7 @@ All exports come from the design's HTML file via the render script. Never screen
 | Sharper image (e.g. for a big screen) | `... --hd` | `design.png` at 2x |
 | PDF of slides or a carousel | `... --pdf` | multi-page `design.pdf` |
 | Print poster | `npm run render -- <file>` (print templates make a PDF automatically) | `design.pdf`, 3 mm bleed |
-| Same poster as A4 or A5 | `... --paper A4` / `--paper A5` | `design-A4.pdf` |
+| Same poster as A4 or A5 (flyer) | new folder with a copy of the design, paper values from `guide/formats.md` ("Poster sizes"), then render | `design.pdf` in that size |
 | QR code for a link | `npm run qr -- <url> output/<folder>/qr.svg` | SVG to place in the design |
 
 Print checklist to tell the user:

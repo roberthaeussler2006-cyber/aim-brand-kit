@@ -41,6 +41,7 @@ Several `.canvas` blocks in one file = carousel slides, deck slides or document 
 <div class="photo"><img src="../../brand/photos/mountains.jpg" alt="" style="--focus: 50% 35%"></div>
 <div class="photo photo--top" style="--photo-h: 55%"><img src="../../brand/photos/dark-peak.jpg" alt=""></div>
 <div class="vignette"></div>                                                 <!-- darkens edges for readability -->
+<img src="../../brand/motifs/climb-mountain-route.svg" alt="" data-decor style="position:absolute; left:0; bottom:0; width:100%; z-index:0"> <!-- light designs: Learning Journey climb -->
 <div class="grain"></div>                                                    <!-- always last background layer -->
 ```
 

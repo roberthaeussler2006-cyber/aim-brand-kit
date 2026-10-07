@@ -56,7 +56,7 @@ Also look at `templates/*/preview.png` and `gallery/` to see what good AIM work 
    PNG for social media, PDF for print. For print: PDF, at 100% scale, with 3 mm bleed included.
 
 Other commands: `npm run render -- <file> --hd` (2x PNG), `--pdf` (PDF for screen formats,
-e.g. slides), `--paper A4` (poster scaled to A4), `npm run qr -- <url> <file.svg>` (QR code).
+e.g. slides), `npm run qr -- <url> <file.svg>` (QR code). Other paper sizes: `guide/formats.md`.
 
 If `npm run render` fails because the browser is missing, run `npm run setup` once, then retry.
 
@@ -93,9 +93,12 @@ approval from the brand owner (Robert Häussler).
 
 ## Showing previews
 
-- Claude Code (desktop app): open the rendered PNG in the preview pane, or read the PNG and
-  describe it. Codex: open the PNG in the app's preview / browser, or attach it.
-- Always reference the full path, for example `output/2026-10-07-kickoff-story/design.png`.
+- Look at the PNG yourself first (read the image file).
+- Then show it to the user with your tool's inline image/file preview if you have one
+  (Claude Code: see CLAUDE.md; Codex: attach the image or open it in the app's browser).
+- If you have no inline preview, run `open output/<folder>/design.png` (macOS) so it opens in
+  Preview on the user's screen, and say so.
+- Always give the path too, for example `output/2026-10-07-kickoff-story/design.png`.
 
 ## Repository map
 

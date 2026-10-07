@@ -46,6 +46,11 @@ Schau dir `templates/*/preview.png` und `gallery/` an.
 7. **Zeigen** und in ein, zwei Sätzen zusammenfassen. Feedback umsetzen.
 8. **Übergeben:** sagen, wo die Dateien liegen. PNG für Social Media, PDF für den Druck (100%, 3 mm Beschnitt).
 
+## Vorschau zeigen
+
+Das PNG zuerst selbst anschauen. Dann mit der Bildvorschau des Tools zeigen; gibt es keine,
+`open output/<ordner>/design.png` ausführen (öffnet es in Vorschau auf dem Mac) und den Pfad nennen.
+
 ## Markenregeln, die nie gebrochen werden
 
 - **Farben:** nur die Tokens aus `brand/tokens.css`. Lila ist Akzent.
